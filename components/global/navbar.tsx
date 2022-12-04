@@ -42,7 +42,7 @@ function OneLink({
   return (
     <Link
       href={to}
-      className={`text-white px-4 py-1 rounded-md font-medium text-lg ${
+      className={`text-white px-6 py-1 rounded-md font-medium text-lg ${
         isActive ? "bg-yellow/10" : ""
       } transition-all ease-in duration hover:bg-yellow/10`}
     >

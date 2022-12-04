@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { thousandSeparator } from "../../utils";
 
+import { motion } from "framer-motion";
+
 interface PropertyType {
   id: number;
   title: string;
@@ -37,6 +39,14 @@ const sampleProperties: PropertyType[] = [
     capacity: 5,
     image: "/house.png",
   },
+  {
+    id: 3,
+    title: "Studio Apartment",
+    location: "Bumbogo, Kigali",
+    price: 700000,
+    capacity: 1,
+    image: "/house.png",
+  },
 ];
 
 export default function Properties() {
@@ -48,18 +58,30 @@ export default function Properties() {
           High quality, affordable and premium houses across Rwanda
         </p>
       </div>
-      <div className="flex gap-6 flex-wrap pb-16">
-        {sampleProperties.map((prp) => (
-          <OneProperty key={prp.id} property={prp} />
+      <div className="flex gap-6 justify-center flex-wrap pb-16">
+        {sampleProperties.map((prp, i) => (
+          <OneProperty key={prp.id} property={prp} index={i} />
         ))}
       </div>
     </section>
   );
 }
 
-function OneProperty({ property }: { property: PropertyType }) {
+function OneProperty({
+  property,
+  index,
+}: {
+  property: PropertyType;
+  index?: number;
+}) {
   return (
-    <div className={`rounded-lg gap-6 one-property p-4 flex w-[400px] h-auto`}>
+    <motion.div
+      transition={{ ease: "easeIn", duration: 0.3, delay: index * 0.1 }}
+      initial={{ y: 30, opacity: 0.5 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ amount: 1 }}
+      className={`rounded-lg hover:bg-yellow/10 transition-all ease-in duration-300 gap-6 one-property p-4 flex w-[500px] h-auto`}
+    >
       <div className="relative w-[150px] h-[180px] rounded-md">
         <Image
           src={property.image}
@@ -90,13 +112,13 @@ function OneProperty({ property }: { property: PropertyType }) {
           <a
             href="https://shorturl.at/xM123"
             target={"_blank"}
-            className="bg-yellow px-4 py-1 rounded-xl font-bold"
+            className="bg-yellow px-8 py-1 rounded-xl font-bold"
             rel="noreferrer"
           >
             View
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

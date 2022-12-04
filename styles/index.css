@@ -68,3 +68,21 @@ span {
 .one-property {
     box-shadow: 0px 17px 50px rgba(143, 144, 166, 0.32);
 }
+
+button {
+    transition: all ease-in 0.3s;
+    transform: perspective(100px) translateZ(0px);
+}
+
+button:hover {
+    transform: perspective(100px) translateZ(5px);
+}
+
+.animateLinkAsButton {
+    transition: all ease-in 0.3s;
+    transform: perspective(100px) translateZ(0px);
+}
+
+.animateLinkAsButton:hover {
+    transform: perspective(100px) translateZ(5px);
+}

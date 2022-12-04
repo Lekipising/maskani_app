@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import BgImage from "../../public/bg.png";
+import BgImage from "../../public/bg_main.jpg";
 
 export default function Hero() {
   return (
@@ -9,7 +9,7 @@ export default function Hero() {
         <h1 className="text-white text-[72px]">
           Your guide through the real estate jungle{" "}
         </h1>
-        <p className="text-white text-xl">
+        <p className="text-white text-xl font-medium">
           <span className="text-yellow font-bold">Maskani, </span> is an
           augmented reality web platform that recreates the life-like experience
           of walking inside a real-sized house in any location, providing users
@@ -27,7 +27,7 @@ export default function Hero() {
           />
         </div>
       </div>
-      <div className="absolute inset-0 overlay h-[70vh] w-3/5 z-20"></div>
+      <div className="absolute inset-0 overlay h-[70vh] w-[70%] z-20"></div>
     </section>
   );
 }
