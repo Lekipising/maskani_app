@@ -1,8 +1,9 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { thousandSeparator } from "../../utils";
 
 import { motion } from "framer-motion";
+import { FilledButton } from "../global/buttons";
 
 interface PropertyType {
   id: number;
@@ -76,6 +77,7 @@ function OneProperty({
   property: PropertyType;
   index?: number;
 }) {
+  const [btnText, setBtnText] = useState("Book a tour");
   return (
     <motion.div
       transition={{ ease: "easeIn", duration: 0.3, delay: index * 0.1 }}
@@ -84,7 +86,7 @@ function OneProperty({
       viewport={{ amount: 1, once: true }}
       className={`rounded-lg hover:bg-yellow/10 md:pb-6 pb-8 transition-all ease-in duration-300 gap-6 one-property p-4 flex md:flex-row flex-col md:w-[500px] w-full h-auto`}
     >
-      <div className="relative md:w-[150px] w-full h-[180px] rounded-md">
+      <div className="relative md:w-[150px] md:min-w-[150px] w-full h-[180px] rounded-md">
         <Image
           src={property.image}
           fill
@@ -92,33 +94,26 @@ function OneProperty({
           alt={property.title}
         />
       </div>
-      <div className="flex flex-col gap-4 md:gap-0 justify-between">
+      <div className="flex flex-col gap-4 md:gap-0 w-full justify-between">
         <h1 className="md:text-[28px] text-[22px] font-bold text-[#f8cc74]">
           {property.title}
         </h1>
         <p className="text-white tetx-[19px] font-medium flex justify-between">
-          <span className="flex gap-2 items-center">
-            <Image src="/beds.svg" width={20} height={20} alt="location" />{" "}
-            {property.capacity + " Bedroom"}
-          </span>
-          <span className="flex gap-2 items-center">
+          <div className="flex gap-2 text-sm items-center">
+            <Image src="/location.svg" width={20} height={20} alt="location" />{" "}
+            {property.location}
+          </div>
+          <span className="flex gap-2 text-sm items-center">
             <Image src="/price.svg" width={20} height={20} alt="location" />{" "}
             {"Rwf " + thousandSeparator(property.price)}
           </span>
         </p>
         <div className="text-white tetx-[19px] font-medium flex justify-between">
-          <div className="flex gap-2 items-center">
-            <Image src="/location.svg" width={20} height={20} alt="location" />{" "}
-            {property.location}
-          </div>
-          <a
-            href="https://bit.ly/maskani-virtual-demo"
-            target={"_blank"}
-            className="bg-yellow px-8 py-1 rounded-xl font-bold"
-            rel="noreferrer"
-          >
-            View
-          </a>
+          <span className="flex gap-2 text-sm items-center">
+            <Image src="/beds.svg" width={20} height={20} alt="location" />{" "}
+            {property.capacity + " Bedroom"}
+          </span>
+          <FilledButton text={btnText} onClick={() => setBtnText("Booked!")} />
         </div>
       </div>
     </motion.div>

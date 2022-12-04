@@ -22,3 +22,14 @@ export function OutlinedLinkButton({ to, text }) {
     </Link>
   );
 }
+
+export function FilledButton({ onClick, text }) {
+  return (
+    <button
+      onClick={onClick}
+      className="bg-yellow  text-md px-6 leading-none flex justify-center items-center py-2 rounded-lg font-semibold text-white"
+    >
+      {text}
+    </button>
+  );
+}
