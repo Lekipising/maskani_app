@@ -99,10 +99,10 @@ function OneProperty({
           {property.title}
         </h1>
         <p className="text-white tetx-[19px] font-medium flex justify-between">
-          <div className="flex gap-2 text-sm items-center">
+          <span className="flex gap-2 text-sm items-center">
             <Image src="/location.svg" width={20} height={20} alt="location" />{" "}
             {property.location}
-          </div>
+          </span>
           <span className="flex gap-2 text-sm items-center">
             <Image src="/price.svg" width={20} height={20} alt="location" />{" "}
             {"Rwf " + thousandSeparator(property.price)}

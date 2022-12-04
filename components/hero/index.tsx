@@ -2,9 +2,23 @@ import Image from "next/image";
 import React from "react";
 import BgImage from "../../public/bg_main.jpg";
 
+import { motion } from "framer-motion";
+
 export default function Hero() {
   return (
     <section className="w-[90%] mx-auto mt-8 md:h-[70vh] max-h-[600px] h-[100vh] relative">
+      <motion.div
+        initial={{ scale: 0.6 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="absolute hidden md:block border-yellow origin-top-left border-l-2 border-t-2 z-50 left-0 top-0 w-8 h-8 rounded-tl-lg"
+      />
+      <motion.div
+        initial={{ scale: 0.6 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+        className="absolute hidden md:block border-yellow origin-top-left border-l-2 border-b-2 z-50 left-0 bottom-0 w-8 h-8 rounded-bl-lg"
+      />
       <div className="md:w-[50%] w-full top-0 md:translate-y-[30%] flex flex-col gap-4 absolute left-0 z-30">
         <h1 className="text-white text-[72px]">
           Your guide through the real estate jungle{" "}
