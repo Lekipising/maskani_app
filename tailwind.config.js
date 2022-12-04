@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./components/**/*.tsx", "./pages/**/*.tsx"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        red: "#E90808",
+        yellow: "#f1b234",
+      },
+    },
   },
   plugins: [],
 };
