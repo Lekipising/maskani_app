@@ -24,6 +24,8 @@ export default function Hero() {
             fill
             className="object-cover object-center rounded-lg"
             alt="Maskani App Welcome"
+            priority
+            quality={100}
           />
         </div>
       </div>

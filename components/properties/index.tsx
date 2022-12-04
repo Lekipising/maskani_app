@@ -110,7 +110,7 @@ function OneProperty({
             {property.location}
           </div>
           <a
-            href="https://shorturl.at/xM123"
+            href="https://bit.ly/maskani-virtual-demo"
             target={"_blank"}
             className="bg-yellow px-8 py-1 rounded-xl font-bold"
             rel="noreferrer"
