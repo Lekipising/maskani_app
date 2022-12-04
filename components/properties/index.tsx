@@ -51,14 +51,16 @@ const sampleProperties: PropertyType[] = [
 
 export default function Properties() {
   return (
-    <section className="w-full flex gap-16 flex-col items-center mt-16">
+    <section className="w-full md:px-0 px-4 flex gap-16 flex-col items-center mt-16">
       <div className="flex flex-col gap-2 items-center">
-        <h1 className="text-yellow font-bold text-3xl ">Explore homes</h1>
+        <h1 className="text-yellow font-bold text-3xl md:text-left text-center">
+          Explore homes
+        </h1>
         <p className="text-white font-medium text-lg">
           High quality, affordable and premium houses across Rwanda
         </p>
       </div>
-      <div className="flex gap-6 justify-center flex-wrap pb-16">
+      <div className="flex gap-6 md:px-0 px-4 justify-center flex-wrap pb-16">
         {sampleProperties.map((prp, i) => (
           <OneProperty key={prp.id} property={prp} index={i} />
         ))}
@@ -79,10 +81,10 @@ function OneProperty({
       transition={{ ease: "easeIn", duration: 0.3, delay: index * 0.1 }}
       initial={{ y: 30, opacity: 0.5 }}
       whileInView={{ y: 0, opacity: 1 }}
-      viewport={{ amount: 1 }}
-      className={`rounded-lg hover:bg-yellow/10 transition-all ease-in duration-300 gap-6 one-property p-4 flex w-[500px] h-auto`}
+      viewport={{ amount: 1, once: true }}
+      className={`rounded-lg hover:bg-yellow/10 md:pb-6 pb-8 transition-all ease-in duration-300 gap-6 one-property p-4 flex md:flex-row flex-col md:w-[500px] w-full h-auto`}
     >
-      <div className="relative w-[150px] h-[180px] rounded-md">
+      <div className="relative md:w-[150px] w-full h-[180px] rounded-md">
         <Image
           src={property.image}
           fill
@@ -90,8 +92,8 @@ function OneProperty({
           alt={property.title}
         />
       </div>
-      <div className="flex flex-col justify-between">
-        <h1 className="text-[28px] font-bold text-[#f8cc74]">
+      <div className="flex flex-col gap-4 md:gap-0 justify-between">
+        <h1 className="md:text-[28px] text-[22px] font-bold text-[#f8cc74]">
           {property.title}
         </h1>
         <p className="text-white tetx-[19px] font-medium flex justify-between">

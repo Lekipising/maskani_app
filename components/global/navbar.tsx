@@ -7,22 +7,18 @@ import Logo from "./logo";
 export default function GlobalNavBar() {
   const router = useRouter();
   return (
-    <header className="w-[90%] mx-auto items-center flex justify-between">
+    <header className="w-[90%] mx-auto items-center flex justify-center md:justify-between">
       <Logo />
-      <div className="flex gap-12 justify-center w-max">
+      <div className="md:flex hidden gap-12 justify-center w-max">
         <OneLink to="/" text="Home" isActive={router.pathname === "/"} />
         <OneLink
           to="/"
           text="Explore"
           isActive={router.pathname === "explore"}
         />
-        <OneLink
-          to="/"
-          text="Agents"
-          isActive={router.pathname === "agents"}
-        />
+        <OneLink to="/" text="Agents" isActive={router.pathname === "agents"} />
       </div>
-      <div className="flex justify-center gap-6">
+      <div className="hidden md:flex justify-center gap-6">
         <OutlinedLinkButton to={"/"} text={"Join now"} />
         <FilledLinkButton to={"/"} text={"Login"} />
       </div>

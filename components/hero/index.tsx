@@ -4,8 +4,8 @@ import BgImage from "../../public/bg_main.jpg";
 
 export default function Hero() {
   return (
-    <section className="w-[90%] mx-auto mt-8 h-[70vh] relative">
-      <div className="w-[50%] top-0 translate-y-[30%] flex flex-col gap-4 absolute left-0 z-30">
+    <section className="w-[90%] mx-auto mt-8 md:h-[70vh] h-[100vh] relative">
+      <div className="md:w-[50%] w-full top-0 md:translate-y-[30%] flex flex-col gap-4 absolute left-0 z-30">
         <h1 className="text-white text-[72px]">
           Your guide through the real estate jungle{" "}
         </h1>
